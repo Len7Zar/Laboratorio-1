@@ -1,0 +1,26 @@
+nombre = input("Ingrese su nombre: ")
+try:
+    quetzales = float(input("¿Cuántos quetzales tiene?: "))
+    tasa_dolar = float(input("Ingrese la tasa de cambio a dólares: "))
+    tasa_euro = float (input("ingrese la tasa de cambio a euros"))
+
+except ValueError:
+    print ("se ha ingresado algun dato incorrecto, se le asigara automaticamente un valor de 0, por favor vuelva a intentar nuevamente")
+    quetzales =0
+    tasa_dolar=1
+try:
+    if ((tasa_dolar == 0) or (tasa_euro == 0)):
+        raise ValueError("La tasa de cambio no puede ser 0.")
+    euros = quetzales / tasa_euro
+    dolares = quetzales / tasa_dolar
+    puede_viajar = dolares > 100
+    dias = dolares / 35
+    print(f"\nHola {nombre}, tienes ${dolares:.2f} dólares o {euros:.2f} euros.")
+
+    if puede_viajar:
+        print("¡Puedes hacer un viajesotote! de ",int(dias),"dias")
+    else:
+        print("Necesitas ahorrar más para tu viaje.")
+
+except ValueError as e:
+    print(f"Error: {e}")
