@@ -8,6 +8,7 @@ except ValueError:
     print ("se ha ingresado algun dato incorrecto, se le asigara automaticamente un valor de 0, por favor vuelva a intentar nuevamente")
     quetzales =0
     tasa_dolar=1
+    tasa_euro=1
 try:
     if ((tasa_dolar == 0) or (tasa_euro == 0)):
         raise ValueError("La tasa de cambio no puede ser 0.")
